@@ -1,60 +1,63 @@
+// src/components/AiReport.jsx
+
 import React, { useState } from 'react';
 import { Button, Typography, Paper, CircularProgress, Box } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  setAiResponse,
-  setLoading,
-  setError,
-  clearOpenAiData,
-} from '../../redux/slices/openAiSlice'; // Import OpenAI actions
-import axios from 'axios';
+import { fetchAiResponse } from '../../utils/fetchAiResponse'; // Adjust the path as needed
+import { useSelector } from 'react-redux';
 
 
-const OPENAI_API_URL = 'https://api.openai.com/v1/completions'; // Adjust based on the OpenAI API you are using
-const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY; // Ensure your API key is stored securely
-
-export const fetchOpenAiResponse = async (prompt) => {
-    try {
-      const response = await axios.post(OPENAI_API_URL, {
-        model: 'text-davinci-003', // Use the appropriate model for your use case
-        prompt: prompt,
-        max_tokens: 150,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${OPENAI_API_KEY}`,
-        },
-      });
-  
-      return response.data.choices[0].text; // Adjust based on your needs
-    } catch (error) {
-      throw new Error('Failed to fetch OpenAI response: ' + error.message);
-    }
-  };
 const OpenAiReport = () => {
-  const dispatch = useDispatch();
-  const { aiResponse, loading: aiLoading, error: aiError } = useSelector(
-    (state) => state.openAi
-  );
+  const [reportContent, setReportContent] = useState('Your report content');
+  const { items } = useSelector((state) => state.expenses);
 
-  const [report, setReport] = useState('');
+  const [aiResponse, setAiResponse] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const generateReport = async () => {
+  const generateReport = () => {
+
+    const income = items.reduce((acc, item) => acc + (item.incomeAmount || 0), 0);
+    const expenses = items.reduce((acc, item) => acc + (item.expenseAmount || 0), 0);
+    const net = income - expenses;
+
+    const expenseCategories = items.reduce((acc, item) => {
+      if (item.expenseType) {
+        acc[item.expenseType] = (acc[item.expenseType] || 0) + (item.expenseAmount || 0);
+      }
+      return acc;
+    }, {});
+
+    // Convert report content to text format
+    const reportText = `
+                I need a financial report based on the following data with your suggessions to improve saving habbit please give full details:
+
+                1. **Total Income:** ₹${income.toFixed(2)}
+                2. **Total Expenses:** ₹${expenses.toFixed(2)}
+                3. **Net Savings:** ₹${net < 0 ? 0 : net.toFixed(2)}
+                4. **Net Loss:** ₹${net > 0 ? 0 : net.toFixed(2)}
+                5. **Expenses by Category:**
+                ${Object.entries(expenseCategories).map(([category, amount]) => `   - ${category}: ₹${amount.toFixed(2)}`).join('\n')}
+                6. **Recommendations:**
+                ${net < 0
+        ? '   - Consider reducing discretionary spending to improve net savings.\n   - Review recurring expenses and identify potential savings."cut"'
+        : '   - Maintain current spending habits to sustain savings.\n   - Consider investing surplus income for better financial growth."cut" '}
+                `;
+
+    return reportText;
+  };
+
+  const generateAiReport = async () => {
     setLoading(true);
-    dispatch(clearOpenAiData()); // Clear previous OpenAI data
+    setError(null);
 
     try {
-      // Your report generation logic here
-      const generatedReport = 'Your generated report content'; // Replace with actual report generation logic
-      setReport(generatedReport);
 
-      // Fetch OpenAI response based on the generated report
-      const aiResponse = await fetchOpenAiResponse(generatedReport);
-      dispatch(setAiResponse(aiResponse));
-    } catch (error) {
-      dispatch(setError(error.message));
-      console.error('Error generating report:', error);
+      const response = await fetchAiResponse(generateReport());
+      const result = response.split('"cut"')[1].trim(); // Gets everything after "cut" because the AI response include the input data too
+
+      setAiResponse(result);
+    } catch (err) {
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -62,57 +65,50 @@ const OpenAiReport = () => {
 
   return (
     <Paper style={{ padding: '20px', marginTop: '20px' }}>
-      <Typography variant="h2" textAlign="center">
+      <Typography
+        variant="h2"
+        textAlign="center"
+        borderRadius="20px"
+        sx={{
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // You can adjust these values for the desired shadow effect
+        }}
+      >
         openAI-Powered Financial Report
-      </Typography>
-      <Button
+      </Typography>      <Button
         variant="contained"
         color="primary"
-        onClick={generateReport}
+        onClick={generateAiReport}
+        disabled={loading}
         style={{ marginTop: '10px' }}
       >
         Generate AI Report
       </Button>
-      {loading && <CircularProgress style={{ marginLeft: '10px' }} />}
-      {aiLoading && <CircularProgress style={{ marginLeft: '10px' }} />}
-      {report && (
+      {loading &&
+
         <Box
-          variant="h6"
-          bgcolor="#f0f0f0"
-          position="relative"
-          sx={{
-            borderRadius: 1,
-            px: 4,
-            py: 8,
-            overflow: 'hidden',
-            whiteSpace: 'pre-line',
-            mt: 2,
-          }}
-        >
-          {report}
+        position='fixed'
+        top='0'
+        left='0'
+        width='100%'
+         bgcolor="rgba(255, 255, 255, 0.8)"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100vh"
+        ><CircularProgress style={{ marginLeft: '10px' }} />
         </Box>
-      )}
+      }
       {aiResponse && (
         <Box
-          variant="h6"
-          bgcolor="#58b9ed"
-          position="relative"
-          sx={{
-            borderRadius: 1,
-            px: 2,
-            py: 8,
-            overflow: 'hidden',
-            whiteSpace: 'pre-line',
-            mt: 2,
-          }}
+          sx={{ marginTop: '20px', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '4px' }}
         >
-          <Typography variant="h6">OpenAI Response:</Typography>
-          <Typography variant="body1">{aiResponse}</Typography>
+          <Typography variant="h6">AI Suggestions:</Typography>
+          <Typography whiteSpace={'pre-line'}>{aiResponse}</Typography>
         </Box>
       )}
-      {aiError && (
+      {error && (
         <Typography variant="body1" color="error" style={{ marginTop: '10px' }}>
-          Error: {aiError}
+          Error: {error}
         </Typography>
       )}
     </Paper>

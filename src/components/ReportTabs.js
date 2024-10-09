@@ -62,7 +62,7 @@ export default function ReportTabs({Report,AiReport,OpenAiReport}) {
           aria-label="full width tabs example"
         >
           <Tab label="Financial Report" {...a11yProps(0)} />
-          <Tab label="AI Report (custom modal)" {...a11yProps(1)} />
+          <Tab label="AI Report (custom model)" {...a11yProps(1)} />
           <Tab label="openAI Report" {...a11yProps(2)} />
         </Tabs>
       </AppBar>

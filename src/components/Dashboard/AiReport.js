@@ -8,7 +8,6 @@ const AiReport = () => {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.expenses);
 
-  // Accessing AI report data from Redux
   const { aiReportData, hasRisk } = useSelector((state) => state.aiReport);
 
   const [report, setReport] = useState('');
@@ -129,7 +128,16 @@ const AiReport = () => {
       marginTop: '20px',
       // background: hasRisk === null ? 'white' : hasRisk ? 'red' : 'green'
     }}>
-      <Typography variant="h2" textAlign='center'>AI-Powered Financial Report</Typography>
+      <Typography
+        variant="h2"
+        textAlign="center"
+        borderRadius="20px"
+        sx={{
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // You can adjust these values for the desired shadow effect
+        }}
+      >
+        AI-Powered Financial Report
+      </Typography>
       <Button
         variant="contained"
         color="primary"
@@ -137,7 +145,21 @@ const AiReport = () => {
         style={{ marginTop: '10px' }}>
         Generate AI Report
       </Button>
-      {loading && <CircularProgress style={{ marginLeft: '10px' }} />}
+      {loading &&
+
+        <Box
+          position='fixed'
+          top='0'
+          left='0'
+          width='100%'
+          bgcolor="rgba(255, 255, 255, 0.8)"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100vh"
+        ><CircularProgress style={{ marginLeft: '10px' }} />
+        </Box>
+      }
       {report && (
         <Box
           variant="h6"
@@ -203,7 +225,7 @@ const AiReport = () => {
                   px: 2,
                   width: '120px',
                   py: '4px',
-                }}>Modal Suggestion</Box>
+                }}>Model Suggestion</Box>
 
               {aiReportData?.report}
             </Box>}

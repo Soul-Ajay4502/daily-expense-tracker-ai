@@ -5,7 +5,7 @@ const initialState = {
   aiReportData: [], // AI-generated report
   aiIncomeTotal: 0,
   aiExpenseTotal: 0,
-  hasRisk:null,
+  hasRisk: null,
 };
 
 // Create AI-specific slice
@@ -23,13 +23,20 @@ const aiReportSlice = createSlice({
       state.aiExpenseTotal = action.payload;
     },
     setHasRisk: (state, action) => {
-        state.hasRisk = action.payload;
-      },
+      state.hasRisk = action.payload;
+    },
+    clearAiReportData: (state) => {
+      // Reset the state to initial values
+      state.aiReportData = [];
+      state.aiExpenseTotal = 0;
+      state.aiIncomeTotal = 0;
+      state.hasRisk = null;
+    },
   },
 });
 
 // Export the actions
-export const { setAiReport, setAiIncomeTotal, setAiExpenseTotal,setHasRisk } = aiReportSlice.actions;
+export const { setAiReport, setAiIncomeTotal, setAiExpenseTotal, setHasRisk, clearAiReportData } = aiReportSlice.actions;
 
 // Export the reducer
 export default aiReportSlice.reducer;

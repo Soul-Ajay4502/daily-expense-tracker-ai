@@ -14,6 +14,7 @@ import { signOut } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../redux/slices/authSlice';
 import { clearReportData } from '../../redux/slices/reportSlice';
+import {clearAiReportData} from '../../redux/slices/aiReportSlice'
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -37,6 +38,7 @@ const Navbar = () => {
     await signOut(auth);
     dispatch(clearUser());
     dispatch(clearReportData());
+    dispatch(clearAiReportData());
     navigate('/login');
     handleMenuClose(); // Close the menu after logging out
   };

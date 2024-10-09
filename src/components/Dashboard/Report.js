@@ -11,7 +11,7 @@ import {
   YAxis,
   Tooltip,
   Legend,
-  ResponsiveContainer, // Import ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts';
 import { setReport, setExpenseData, setIncomeTotal, setExpenseTotal } from '../../redux/slices/reportSlice'; // Import actions
 
@@ -75,7 +75,16 @@ const Report = () => {
 
   return (
     <Paper style={{ padding: '20px', marginTop: '20px' }}>
-      <Typography variant="h2" textAlign='center'>Financial Report</Typography>
+      <Typography
+        variant="h2"
+        textAlign="center"
+        borderRadius="20px"
+        sx={{
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+        }}
+      >
+        Financial Report
+      </Typography>
       <Button
         variant="contained"
         color="primary"
@@ -84,8 +93,21 @@ const Report = () => {
       >
         Generate Report
       </Button>
-      {loading && <CircularProgress style={{ marginLeft: '10px' }} />}
+      {loading &&
 
+        <Box
+          position='fixed'
+          top='0'
+          left='0'
+          width='100%'
+          bgcolor="rgba(255, 255, 255, 0.8)"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100vh"
+        ><CircularProgress style={{ marginLeft: '10px' }} />
+        </Box>
+      }
       {reportData.length > 0 && (
         <Box style={{ marginTop: '20px' }}>
           <Box
