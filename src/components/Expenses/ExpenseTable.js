@@ -52,7 +52,7 @@ const ExpenseTable = ({ filter }) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
+            <TableCell>Date (MM-DD-YY)</TableCell>
             <TableCell>Income Type</TableCell>
             <TableCell>Income Amount</TableCell>
             <TableCell>Expense Type</TableCell>
