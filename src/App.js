@@ -29,22 +29,22 @@ function App() {
 
   const routes = [
     {
-      path: '/',
+      path: '/daily-expense-tracker-ai',
       element: isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />,
       protected: false,
     },
     {
-      path: '/login',
+      path: 'daily-expense-tracker-ai/login',
       element: !isAuthenticated ? <Login /> : <Navigate to="/dashboard" />,
       protected: false,
     },
     {
-      path: '/signup',
+      path: 'daily-expense-tracker-ai/signup',
       element: !isAuthenticated ? <Signup /> : <Navigate to="/dashboard" />,
       protected: false,
     },
     {
-      path: '/dashboard',
+      path: 'daily-expense-tracker-ai/dashboard',
       element: (
         <ProtectedRoute>
           <Dashboard />
