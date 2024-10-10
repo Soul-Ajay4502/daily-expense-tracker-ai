@@ -1,15 +1,25 @@
 {
   "files": {
     "main.css": "/daily-expense-tracker-ai/static/css/main.e6c13ad2.css",
-    "main.js": "/daily-expense-tracker-ai/static/js/main.78584f8f.js",
+    "main.js": "/daily-expense-tracker-ai/static/js/main.3c3ab6a6.js",
+    "static/js/434.230a9566.chunk.js": "/daily-expense-tracker-ai/static/js/434.230a9566.chunk.js",
+    "static/js/161.9f1fe769.chunk.js": "/daily-expense-tracker-ai/static/js/161.9f1fe769.chunk.js",
+    "static/js/625.40fd3fca.chunk.js": "/daily-expense-tracker-ai/static/js/625.40fd3fca.chunk.js",
     "static/js/453.166c4e7d.chunk.js": "/daily-expense-tracker-ai/static/js/453.166c4e7d.chunk.js",
+    "static/js/937.70d5946c.chunk.js": "/daily-expense-tracker-ai/static/js/937.70d5946c.chunk.js",
+    "static/js/782.e2fafb0a.chunk.js": "/daily-expense-tracker-ai/static/js/782.e2fafb0a.chunk.js",
     "index.html": "/daily-expense-tracker-ai/index.html",
     "main.e6c13ad2.css.map": "/daily-expense-tracker-ai/static/css/main.e6c13ad2.css.map",
-    "main.78584f8f.js.map": "/daily-expense-tracker-ai/static/js/main.78584f8f.js.map",
-    "453.166c4e7d.chunk.js.map": "/daily-expense-tracker-ai/static/js/453.166c4e7d.chunk.js.map"
+    "main.3c3ab6a6.js.map": "/daily-expense-tracker-ai/static/js/main.3c3ab6a6.js.map",
+    "434.230a9566.chunk.js.map": "/daily-expense-tracker-ai/static/js/434.230a9566.chunk.js.map",
+    "161.9f1fe769.chunk.js.map": "/daily-expense-tracker-ai/static/js/161.9f1fe769.chunk.js.map",
+    "625.40fd3fca.chunk.js.map": "/daily-expense-tracker-ai/static/js/625.40fd3fca.chunk.js.map",
+    "453.166c4e7d.chunk.js.map": "/daily-expense-tracker-ai/static/js/453.166c4e7d.chunk.js.map",
+    "937.70d5946c.chunk.js.map": "/daily-expense-tracker-ai/static/js/937.70d5946c.chunk.js.map",
+    "782.e2fafb0a.chunk.js.map": "/daily-expense-tracker-ai/static/js/782.e2fafb0a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.78584f8f.js"
+    "static/js/main.3c3ab6a6.js"
   ]
 }
