@@ -1,4 +1,3 @@
-// src/components/Dashboard/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import { Container, Grid, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import ExpenseTable from '../Expenses/ExpenseTable';
