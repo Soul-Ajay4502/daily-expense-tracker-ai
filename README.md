@@ -11,7 +11,7 @@
 
 <h2>📄 Project Description</h2>
 <p align="justify">
-  The <strong>Daily Expense Tracker</strong> helps users efficiently manage and track their day-to-day financial transactions. With intuitive navigation and easy-to-use features, it enables users to add, update, and monitor their income and expenses in real-time.
+  The <strong>Daily Expense Tracker</strong> helps users efficiently manage and track their day-to-day financial transactions. With intuitive navigation and easy-to-use features, it enables users to add and monitor their income and expenses in real-time.
 </p>
 
 <div align="center">
