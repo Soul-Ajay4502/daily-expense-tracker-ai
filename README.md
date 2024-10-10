@@ -60,24 +60,55 @@
 
 <h2>📂 Project Structure</h2>
 <pre>
-.
-├── public
+daily-expense-tracker-ai/
+├── .firebaserc
+├── .gitignore
+├── .env
+├── firebase.json
+├── package.json
+├── package-lock.json
+├── README.md
+├── public/
 │   ├── index.html
-│   └── ...
-├── src
-│   ├── components
-│   │   ├── Auth
-│   │   │   ├── Login.js
-│   │   │   └── Signup.js
-│   │   ├── Dashboard
-│   │   │   └── Dashboard.js
-│   │   └── shared
-│   │       ├── Navbar.js
-│   │       └── ProtectedRoute.js
-│   ├── firebase.js
-│   ├── App.js
-│   └── ...
-└── package.json
+│   
+└── src/
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── components/
+    │   ├── Auth/
+    │   │   ├── Login.js
+    │   │   └── Signup.js
+    │   ├── Dashboard/
+    │   │   ├── AiReport.js
+    │   │   ├── Dashboard.js
+    │   │   ├── openAiReport.js
+    │   │   └── Report.js
+    │   ├── Expenses/
+    │   │   ├── ExpenseForm.js
+    │   │   └── ExpenseTable.js
+    │   ├── shared/
+    │   │   ├── Footer.js
+    │   │   ├── Navbar.js
+    │   │   └── ProtectedRoute.js
+    │   └── ReportTabs.js
+    ├── firebase.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── reportWebVitals.js
+    ├── redux/
+    │   ├── slices/
+    │   │   ├── aiReportSlice.js
+    │   │   ├── authSlice.js
+    │   │   ├── expenseSlice.js
+    │   │   ├── openAiSlice.js
+    │   │   └── reportSlice.js
+    │   └── store.js
+    ├── setupTests.js
+    └── utils/
+        └── fetchAiResponse.js
+
 </pre>
 
 
