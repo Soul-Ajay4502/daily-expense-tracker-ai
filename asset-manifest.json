@@ -1,25 +1,27 @@
 {
   "files": {
     "main.css": "/daily-expense-tracker-ai/static/css/main.e6c13ad2.css",
-    "main.js": "/daily-expense-tracker-ai/static/js/main.a521c696.js",
-    "static/js/434.230a9566.chunk.js": "/daily-expense-tracker-ai/static/js/434.230a9566.chunk.js",
-    "static/js/161.9f1fe769.chunk.js": "/daily-expense-tracker-ai/static/js/161.9f1fe769.chunk.js",
-    "static/js/625.40fd3fca.chunk.js": "/daily-expense-tracker-ai/static/js/625.40fd3fca.chunk.js",
+    "main.js": "/daily-expense-tracker-ai/static/js/main.ed34911b.js",
+    "static/js/17.23e25672.chunk.js": "/daily-expense-tracker-ai/static/js/17.23e25672.chunk.js",
+    "static/js/161.4d8496ea.chunk.js": "/daily-expense-tracker-ai/static/js/161.4d8496ea.chunk.js",
+    "static/js/150.7b3da655.chunk.js": "/daily-expense-tracker-ai/static/js/150.7b3da655.chunk.js",
     "static/js/453.166c4e7d.chunk.js": "/daily-expense-tracker-ai/static/js/453.166c4e7d.chunk.js",
-    "static/js/937.70d5946c.chunk.js": "/daily-expense-tracker-ai/static/js/937.70d5946c.chunk.js",
-    "static/js/782.e2fafb0a.chunk.js": "/daily-expense-tracker-ai/static/js/782.e2fafb0a.chunk.js",
+    "static/js/937.9e96deae.chunk.js": "/daily-expense-tracker-ai/static/js/937.9e96deae.chunk.js",
+    "static/js/952.0ceb00d3.chunk.js": "/daily-expense-tracker-ai/static/js/952.0ceb00d3.chunk.js",
+    "static/media/ai.jpg": "/daily-expense-tracker-ai/static/media/ai.6b7a41158865e2353414.jpg",
+    "static/media/ai2.png": "/daily-expense-tracker-ai/static/media/ai2.6840cb0592f071dde5f0.png",
     "index.html": "/daily-expense-tracker-ai/index.html",
     "main.e6c13ad2.css.map": "/daily-expense-tracker-ai/static/css/main.e6c13ad2.css.map",
-    "main.a521c696.js.map": "/daily-expense-tracker-ai/static/js/main.a521c696.js.map",
-    "434.230a9566.chunk.js.map": "/daily-expense-tracker-ai/static/js/434.230a9566.chunk.js.map",
-    "161.9f1fe769.chunk.js.map": "/daily-expense-tracker-ai/static/js/161.9f1fe769.chunk.js.map",
-    "625.40fd3fca.chunk.js.map": "/daily-expense-tracker-ai/static/js/625.40fd3fca.chunk.js.map",
+    "main.ed34911b.js.map": "/daily-expense-tracker-ai/static/js/main.ed34911b.js.map",
+    "17.23e25672.chunk.js.map": "/daily-expense-tracker-ai/static/js/17.23e25672.chunk.js.map",
+    "161.4d8496ea.chunk.js.map": "/daily-expense-tracker-ai/static/js/161.4d8496ea.chunk.js.map",
+    "150.7b3da655.chunk.js.map": "/daily-expense-tracker-ai/static/js/150.7b3da655.chunk.js.map",
     "453.166c4e7d.chunk.js.map": "/daily-expense-tracker-ai/static/js/453.166c4e7d.chunk.js.map",
-    "937.70d5946c.chunk.js.map": "/daily-expense-tracker-ai/static/js/937.70d5946c.chunk.js.map",
-    "782.e2fafb0a.chunk.js.map": "/daily-expense-tracker-ai/static/js/782.e2fafb0a.chunk.js.map"
+    "937.9e96deae.chunk.js.map": "/daily-expense-tracker-ai/static/js/937.9e96deae.chunk.js.map",
+    "952.0ceb00d3.chunk.js.map": "/daily-expense-tracker-ai/static/js/952.0ceb00d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.a521c696.js"
+    "static/js/main.ed34911b.js"
   ]
 }
