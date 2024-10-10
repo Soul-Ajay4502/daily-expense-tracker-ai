@@ -142,6 +142,11 @@ const Login = () => {
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
+                                slotProps={{
+                                    inputLabel: {
+                                        shrink: true,
+                                    },
+                                }}
                                 fullWidth
                                 margin="normal"
                                 required
@@ -155,6 +160,11 @@ const Login = () => {
                                 value={values.password}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
+                                slotProps={{
+                                    inputLabel: {
+                                        shrink: true,
+                                    },
+                                }}
                                 fullWidth
                                 margin="normal"
                                 required
