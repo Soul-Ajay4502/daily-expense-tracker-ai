@@ -1,37 +1,84 @@
-📊 Daily Expense Tracker
-
-Daily Expense Tracker is a web application designed to help users easily track their daily expenses and incomes, generate financial reports, and visualize spending patterns. The app is built using modern web technologies like React.js and Firebase.
-
-🚀 Features
-User Authentication: Secure login and sign-up via Firebase Authentication.
-Expense & Income Tracking: Add, edit, and delete daily expense and income entries.
-Real-Time Data Sync: All financial data is stored and updated in real-time using Firebase Firestore.
-Financial Reports: View monthly summaries of your income and expenses with AI and based on predefined condition.
-Responsive Design: Works on both desktop and mobile browsers.
-Data Visualization: Visual representation of your financial summary on the dashboard.
 
 
-🌐 Live Demo
-     https://soul-ajay4502.github.io/daily-expense-tracker-ai/#/dashboard - >Git hub pages
-     https://dailyexpensetracker-b5a15.web.app/login -> Firebase hosting
-🔗 Daily Expense Tracker
+<a href="https://visitcount.itsvg.in">
+  <img align="right" src="https://visitcount.itsvg.in/api?id=Soul-Ajay4502&label=Profile%20Views&color=12&icon=8&pretty=false" />
+</a>
 
-📚 Tech Stack
+<div align="center">
+  <h1>💸 Daily Expense Tracker</h1>
+  <p>A simple and efficient daily expense tracking application built with React, Firebase, and Redux.</p>
+</div>
 
-Frontend	                Backend	                Deployment	        Styling
-React.js	                Firebase Firestore	    GitHub Pages	    Custom CSS
-Redux (State Management)	Firebase Auth		    Firebase Hosting
-React Router DOM	
+<h2>📄 Project Description</h2>
+<p align="justify">
+  The <strong>Daily Expense Tracker</strong> helps users efficiently manage and track their day-to-day financial transactions. With intuitive navigation and easy-to-use features, it enables users to add, update, and monitor their income and expenses in real-time.
+</p>
 
-⚙️ Installation on local machine
+<div align="center">
+  <h2>🧑‍💻 Tech Stack</h2>
+  <img width="500px" src="https://skillicons.dev/icons?i=react,redux,firebase,js,vscode,github" />
+</div>
 
-Prerequisites
+<h2>🚀 Features</h2>
+<ul>
+  <li>User authentication with Firebase</li>
+  <li>Real-time expense tracking</li>
+  <li>Income and expense data visualization</li>
+  <li>Responsive UI with React and CSS</li>
+  <li>Protected routes for secured data access</li>
+  <li>Finantial report by AI</li>
+</ul>
 
+<h2>⚙️ Installation on local machine</h2>
+
+<h4>Prerequisites</h4>
+<ol>
+  <li>
     Node.js installed on your local machine.
+</li>
+</ol>
+<h2>🔧 Setup Instructions</h2>
+<ol>
+  <li>Clone the repository: <code>git clone https://github.com/Soul-Ajay4502/daily-expense-tracker-ai.git</code></li>
+  <li>Navigate to the project directory: <code>cd daily-expense-tracker-ai</code></li>
+  <li>Install dependencies: <code>npm install || npm i</code></li>
+  <li>Start the development server: <code>npm start</code></li>
+</ol>
 
-Clone the Repository
+<h2>🔑 Environment Variables</h2>
+<p>To run this project, you will need to add the following environment variables in your <code>.env</code> file:</p>
+<ul>
+  <li><code>REACT_APP_FIREBASE_KEY</code></li>
+  <li><code>REACT_APP_HUGGING_FACE_API_KEY</code></li>
+  <li><code>REACT_APP_HUGGING_FACE_API_URL</code></li>
+</ul>
 
-git clone https://github.com/Soul-Ajay4502/daily-expense-tracker-ai.git
-cd daily-expense-tracker-ai
+<h2>🌐 Live Demo</h2>
+<p>Check out the live demo of the project(git hub pages) <a href="https://soul-ajay4502.github.io/daily-expense-tracker-ai/" target="_blank">here</a>.</p>
 
-npm install || npm i
+<p>Check out the live demo of the project(firbase hosting) <a href="https://dailyexpensetracker-b5a15.web.app/login" target="_blank">here</a>.</p>
+
+<h2>📂 Project Structure</h2>
+<pre>
+.
+├── public
+│   ├── index.html
+│   └── ...
+├── src
+│   ├── components
+│   │   ├── Auth
+│   │   │   ├── Login.js
+│   │   │   └── Signup.js
+│   │   ├── Dashboard
+│   │   │   └── Dashboard.js
+│   │   └── shared
+│   │       ├── Navbar.js
+│   │       └── ProtectedRoute.js
+│   ├── firebase.js
+│   ├── App.js
+│   └── ...
+└── package.json
+</pre>
+
+
+
