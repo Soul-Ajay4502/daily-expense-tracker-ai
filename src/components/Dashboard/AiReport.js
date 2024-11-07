@@ -26,19 +26,19 @@ const AiReport = () => {
 
     const prepareData = (items) => {
         const incomeTotal = items.reduce(
-            (acc, item) => acc + (item.incomeAmount || 0),
+            (acc, item) => acc + (item?.incomeAmount || 0),
             0
         );
         const expenseTotal = items.reduce(
-            (acc, item) => acc + (item.expenseAmount || 0),
+            (acc, item) => acc + (item?.expenseAmount || 0),
             0
         );
         const netSavings = incomeTotal - expenseTotal;
 
         const expenseCategories = items.reduce((acc, item) => {
-            if (item.expenseType) {
-                acc[item.expenseType] =
-                    (acc[item.expenseType] || 0) + (item.expenseAmount || 0);
+            if (item?.expenseType) {
+                acc[item?.expenseType] =
+                    (acc[item?.expenseType] || 0) + (item?.expenseAmount || 0);
             }
             return acc;
         }, {});
@@ -114,21 +114,21 @@ const AiReport = () => {
 
             // Calculate income, expenses, and net
             const income = items.reduce(
-                (acc, item) => acc + (item.incomeAmount || 0),
+                (acc, item) => acc + (item?.incomeAmount || 0),
                 0
             );
             const expenses = items.reduce(
-                (acc, item) => acc + (item.expenseAmount || 0),
+                (acc, item) => acc + (item?.expenseAmount || 0),
                 0
             );
             const net = income - expenses;
 
             // Categorize expenses
             const expenseCategories = items.reduce((acc, item) => {
-                if (item.expenseType) {
-                    acc[item.expenseType] =
-                        (acc[item.expenseType] || 0) +
-                        (item.expenseAmount || 0);
+                if (item?.expenseType) {
+                    acc[item?.expenseType] =
+                        (acc[item?.expenseType] || 0) +
+                        (item?.expenseAmount || 0);
                 }
                 return acc;
             }, {});

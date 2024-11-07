@@ -33,7 +33,7 @@ const ExpenseTable = ({ filter }) => {
 
         if (filter === "day") {
             filtered = items.filter((item) => {
-                const itemDate = item.date
+                const itemDate = item?.date
                     ? item.date.toDate
                         ? item.date.toDate()
                         : new Date(item.date)
@@ -43,8 +43,8 @@ const ExpenseTable = ({ filter }) => {
             });
         } else if (filter === "week") {
             filtered = items.filter((item) => {
-                const itemDate = item.date
-                    ? item.date.toDate
+                const itemDate = item?.date
+                    ? item?.date.toDate
                         ? item.date.toDate()
                         : new Date(item.date)
                     : null;
@@ -53,7 +53,7 @@ const ExpenseTable = ({ filter }) => {
             });
         } else if (filter === "month") {
             filtered = items.filter((item) => {
-                const itemDate = item.date
+                const itemDate = item?.date
                     ? item.date.toDate
                         ? item.date.toDate()
                         : new Date(item.date)
@@ -104,19 +104,21 @@ const ExpenseTable = ({ filter }) => {
                     </TableHead>
                     <TableBody>
                         {filteredItems.map((row) => (
-                            <TableRow key={row.id}>
+                            <TableRow key={row?.id}>
                                 <TableCell>
                                     {dayjs(
-                                        row.date.toDate
+                                        row?.date.toDate
                                             ? row.date.toDate()
-                                            : new Date(row.date)
+                                            : new Date(row?.date)
                                     ).format("MM/DD/YYYY")}
                                 </TableCell>
-                                <TableCell>{row.incomeType || "-"}</TableCell>
-                                <TableCell>{row.incomeAmount || "-"}</TableCell>
-                                <TableCell>{row.expenseType || "-"}</TableCell>
+                                <TableCell>{row?.incomeType || "-"}</TableCell>
                                 <TableCell>
-                                    {row.expenseAmount || "-"}
+                                    {row?.incomeAmount || "-"}
+                                </TableCell>
+                                <TableCell>{row?.expenseType || "-"}</TableCell>
+                                <TableCell>
+                                    {row?.expenseAmount || "-"}
                                 </TableCell>
                                 <TableCell>
                                     <IconButton

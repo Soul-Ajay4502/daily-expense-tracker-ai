@@ -23,19 +23,19 @@ const OpenAiReport = () => {
 
     const generateReport = () => {
         const income = items.reduce(
-            (acc, item) => acc + (item.incomeAmount || 0),
+            (acc, item) => acc + (item?.incomeAmount || 0),
             0
         );
         const expenses = items.reduce(
-            (acc, item) => acc + (item.expenseAmount || 0),
+            (acc, item) => acc + (item?.expenseAmount || 0),
             0
         );
         const net = income - expenses;
 
         const expenseCategories = items.reduce((acc, item) => {
-            if (item.expenseType) {
-                acc[item.expenseType] =
-                    (acc[item.expenseType] || 0) + (item.expenseAmount || 0);
+            if (item?.expenseType) {
+                acc[item?.expenseType] =
+                    (acc[item?.expenseType] || 0) + (item?.expenseAmount || 0);
             }
             return acc;
         }, {});
